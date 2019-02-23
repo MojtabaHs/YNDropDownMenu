@@ -27,7 +27,7 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         return opened
     }
     
-    weak var delegate: YNDropDownMenuDelegate?
+    public weak var delegate: YNDropDownMenuDelegate?
     
     internal var opened: Bool = false {
         didSet {
