@@ -27,7 +27,13 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         return opened
     }
     
-    internal var opened: Bool = false
+    weak var delegate: YNDropDownMenuDelegate?
+    
+    internal var opened: Bool = false {
+        didSet {
+            delegate?.dropDownMenu(self, didChangeStateToOpen: opened)
+        }
+    }
     internal var openedIndex: Int = 0
     
     internal var dropDownButtons: [YNDropDownButton]?
