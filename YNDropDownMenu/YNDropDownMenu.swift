@@ -22,6 +22,11 @@ public enum YNStatus {
 
 /// Main Class for YNDropDownMenu
 open class YNDropDownMenu: UIView, YNDropDownDelegate {
+    
+    public var isOpen: Bool {
+        return opened
+    }
+    
     internal var opened: Bool = false
     internal var openedIndex: Int = 0
     
