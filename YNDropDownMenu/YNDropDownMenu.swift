@@ -471,8 +471,11 @@ open class YNDropDownMenu: UIView, YNDropDownDelegate {
         dropDownView.isHidden = false
         
         self.addSubview(dropDownView)
-        self.sendSubviewToBack(dropDownView)
-        
+        #if swift(>=4.2)
+            self.sendSubviewToBack(dropDownView)
+        #else
+            self.sendSubview(toBack: dropDownView)
+        #endif
         (dropDownView as? YNDropDownView)?.dropDownViewOpened()
         
         if self.backgroundBlurEnabled, let _blurEffectView = blurEffectView {
