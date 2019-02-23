@@ -10,6 +10,6 @@
 //  Web: https://chenzook.com
 //
 
-protocol YNDropDownMenuDelegate: class {
+public protocol YNDropDownMenuDelegate: class {
     func dropDownMenu(_ menu: YNDropDownMenu, didChangeStateToOpen isOpen: Bool)
 }
